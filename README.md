@@ -25,7 +25,8 @@ dependencies {
 **Sample Code**
 
 ```
-private fun request() {
+
+    private fun request() {
         val params = JSONObject()
         params.put("username", "")
         params.put("password", "")
@@ -38,5 +39,4 @@ private fun request() {
             })
 
         RequestQueue(this).addToRequestQueue(request)
-    }
-```
+    }```
