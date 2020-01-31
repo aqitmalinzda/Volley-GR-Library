@@ -32,13 +32,24 @@ class MainAct : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    private fun request() { 
+    private fun request() {
         val params = JSONObject()
         params.put("username", "")
         params.put("password", "")
 
         val request =
             VolleyGRequest(methodPOST(), Login::class.java, "URL", params, Response.Listener {
+                toast(this, "Halo")
+            }, Response.ErrorListener {
+                log("Error: ", it.message.toString())
+            })
+
+        RequestQueue(this).addToRequestQueue(request)
+    }
+
+    private fun moreRequest() {
+        val request =
+            VolleyGRequest(methodGET(), String/JSONObject/JSONArray::class.java, "URL", null, Response.Listener {
                 toast(this, "Halo")
             }, Response.ErrorListener {
                 log("Error: ", it.message.toString())
