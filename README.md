@@ -25,8 +25,14 @@ dependencies {
 **Sample Code**
 
 ```
+class MainAct : AppCompatActivity() {
 
-    private fun request() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    private fun request() { 
         val params = JSONObject()
         params.put("username", "")
         params.put("password", "")
@@ -39,4 +45,6 @@ dependencies {
             })
 
         RequestQueue(this).addToRequestQueue(request)
-    }```
+    }
+}
+```
